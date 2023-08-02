@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ background-color: wheat;
+}
+
+nav{
+display: flex;
+
+justify-content: space-between;
+
+}
+ img{
+  min-width: 70vh;
+ }
+
+main{
+ 
+    display: flex;
+    flex-direction: row;
+ 
+    
+
+}
+
