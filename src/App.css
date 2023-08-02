@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- background-color: wheat;
-}
+background-color:rgba(17, 221, 201, 0.484);
+   }
 
 nav{
 display: flex;
@@ -20,7 +20,11 @@ main{
     display: flex;
     flex-direction: row;
  
+    }
+
+    footer{
+      display: flexbox;
     
+    }
 
-}
-
+    
