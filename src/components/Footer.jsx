@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Footer(props) {
   return (
-    <div>© 2023 All rights reserved.</div>
+    <>© 2023 All rights reserved.</>
   )
 }
 
