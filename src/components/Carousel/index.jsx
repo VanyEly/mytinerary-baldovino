@@ -4,31 +4,31 @@ function index() {
    
   
   
-  let[carousel,setCarousel] = useState(1)
-   let [test,setTest] = useState(0)
+  //let[carousel,setCarousel] = useState(1)
+   //let [test,setTest] = useState(0)
 
 
- let handlearBack = () => {
-    if(carousel != 1){
-          setCarousel( carousel -1)
-    }
+ //let handlearBack = () => {
+   // if(carousel != 1){
+     //     setCarousel( carousel -1)
+    //}
   
- }
+ //}
 
-let handlearUp = () => {
-    if(carousel != 3){
-        setCarousel(carousel + 1)
-}
-}
+//let handlearUp = () => {
+  //  if(carousel != 3){
+     //   setCarousel(carousel + 1)
+//}
+//}
 
-let handlerTest = () => {
-  setTest(test+1)
-  console.log(test);
-}
+//let handlerTest = () => {
+  //setTest(test+1)
+  //console.log(test);
+//}
 
-useEffect(()=> {
-console.log("efecto");
-},[carousel])
+//useEffect(()=> {
+//console.log("efecto");
+//},[carousel])
 
   return (
     <>

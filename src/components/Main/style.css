@@ -1,9 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  background-color:rgba(17, 221, 201, 0.484);
-     }
+
   
      div{
         display: flex;
@@ -11,3 +6,29 @@
         flex-direction: column;
 
      }
+     main{
+      width: 200px;
+      height: 100px;
+     }
+     h1{
+      width: auto;
+      height: 100px;
+     }
+
+     .CarouselCaption img{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+     }
+
+     button{
+       height: 10px important;
+       width: 10px important;
+     }
+     .card-img-top{
+      width: 18px;
+      height: 20px;
+     }
+     
+     
+   

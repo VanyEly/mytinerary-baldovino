@@ -19,9 +19,11 @@ main{
  
     display: flex;
     flex-direction: row;
- 
+
     }
 
+
+    
     footer{
       display: flexbox;
     
