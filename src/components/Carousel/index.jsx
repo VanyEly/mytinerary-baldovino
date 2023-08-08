@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function index() {
    
-    let[carousel,setCarousel] = useState(1)
+  
+  
+  let[carousel,setCarousel] = useState(1)
+   let [test,setTest] = useState(0)
+
 
  let handlearBack = () => {
     if(carousel != 1){
@@ -17,6 +21,14 @@ let handlearUp = () => {
 }
 }
 
+let handlerTest = () => {
+  setTest(test+1)
+  console.log(test);
+}
+
+useEffect(()=> {
+console.log("efecto");
+},[carousel])
 
   return (
     <>
@@ -33,16 +45,9 @@ let handlearUp = () => {
       </>
     }
 
-
-    
-  
-
-  
-
-  
-
-   <button onClick={()=>handlearBack()}> Back </button>
+  <button onClick={()=>handlearBack()}> Back </button>
  <button onClick={()=>handlearUp()}>  Next </button>
+ <button onClick={()=>handlerTest()}>  Next </button>
     </div>
     </>
   )
