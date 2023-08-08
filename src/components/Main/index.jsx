@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
 import 'react-bootstrap';
-import { Carousel } from 'react-bootstrap';
-import { Image } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import React, { useEffect, useState } from 'react'
 
 function Main() {
 
@@ -34,10 +34,34 @@ function Main() {
         <Button variant="primary">View More</Button>
       </Card.Body>
     </Card>
+     
+    <Carousel>
+      <Carousel.Item interval={1000}>
+      <Image src="holder.js/171x180"   rounded />
+      <Image src="holder.js/171x180"   rounded /> 
+      <Image src="holder.js/171x180"   rounded />
+      <Image src="holder.js/171x180"   rounded />
+     </Carousel.Item>
+      <Carousel.Item interval={500}>
+      <Image src="holder.js/171x180"   rounded />
+      <Image src="holder.js/171x180"   rounded />
+      <Image src="holder.js/171x180"   rounded />
+      <Image src="holder.js/171x180"   rounded />
+      </Carousel.Item>
+      <Carousel.Item>
+        <Carousel.Caption>
+        <Image src="holder.js/171x180"   rounded />
+        <Image src="holder.js/171x180"   rounded />
+        <Image src="holder.js/171x180"   rounded />
+        <Image src="holder.js/171x180"   rounded />
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+
+
   </main>
   </>
   )
-}
-
+  }
 export default Main
 
