@@ -1,9 +1,11 @@
 import 'react-bootstrap';
-import Carousel from 'react-bootstrap/Carousel';
+
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
+
 import React, { useEffect, useState } from 'react'
+import { Carousel } from 'react-bootstrap';
+//import Carousel from './Carousel'
 
 function Main() {
 
@@ -15,7 +17,13 @@ function Main() {
 //const handlerImage = ()=>{
   //image ="cambiar image"
 //}
-  
+  let data = [
+    {src:"https://img.freepik.com/foto-gratis/hermosa-foto-lago-cristalino-junto-base-montana-nevada-dia-soleado_181624-5459.jpg?size=626&ext=jpg&ga=GA1.2.654731816.1691520754&semt=ais"},
+    {src:"https://img.freepik.com/foto-gratis/disparo-gran-angular-solo-arbol-que-crece-cielo-nublado-puesta-sol-rodeada-cesped_181624-22807.jpg?size=626&ext=jpg&ga=GA1.2.654731816.1691520754&semt=ais"},
+    {src:"https://img.freepik.com/fotos-premium/paisaje-cascada-lagos-plitvice-croacia_31965-5308.jpg?size=626&ext=jpg&ga=GA1.2.654731816.1691520754&semt=ais"},
+    {src:"https://img.freepik.com/foto-gratis/foto-fascinante-hermosa-cascada-montana-rhodopes_181624-44272.jpg?size=626&ext=jpg&ga=GA1.2.654731816.1691520754&semt=ais"},
+    
+]
 
 
   return (
@@ -25,40 +33,16 @@ function Main() {
       <p>Our app will help you find the perfect pathh for your next trip. With an easy-to -use interface and a host of itinerary options, planning your next trip has never been easier.</p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-end">
   
-
-</div>
-
-<Card style={{ width: '15rem' }}>
+      <Card style={{ width: '15rem' }}>
       <Card.Img variant="top" src="https://img.freepik.com/foto-gratis/hermosa-foto-lago-cristalino-junto-base-montana-nevada-dia-soleado_181624-5459.jpg?size=626&ext=jpg" />
       <Card.Body>
         <Button variant="primary">View More</Button>
       </Card.Body>
     </Card>
-     
-    <Carousel>
-      <Carousel.Item interval={1000}>
-      <Image src="holder.js/171x180"   rounded />
-      <Image src="holder.js/171x180"   rounded /> 
-      <Image src="holder.js/171x180"   rounded />
-      <Image src="holder.js/171x180"   rounded />
-     </Carousel.Item>
-      <Carousel.Item interval={500}>
-      <Image src="holder.js/171x180"   rounded />
-      <Image src="holder.js/171x180"   rounded />
-      <Image src="holder.js/171x180"   rounded />
-      <Image src="holder.js/171x180"   rounded />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Carousel.Caption>
-        <Image src="holder.js/171x180"   rounded />
-        <Image src="holder.js/171x180"   rounded />
-        <Image src="holder.js/171x180"   rounded />
-        <Image src="holder.js/171x180"   rounded />
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+</div>
 
-
+   {data.map(each =><Carousel src={each.src}/>)}
+   
   </main>
   </>
   )

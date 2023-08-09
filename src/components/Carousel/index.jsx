@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import 'react-bootstrap';
+import { Image, carousel } from 'react-bootstrap';
 
-function index() {
+
+function index({src,contenido}) {
+   
+  <Image src={src}>{contenido}</Image>
    
   
   
@@ -44,14 +49,38 @@ function index() {
      <>
         <p>No existe ese paso</p>
         </>
+
+        
       }
   
     <button onClick={()=>handlearBack()}> Back </button>
    <button onClick={()=>handlearUp()}>  Next </button>
    <button onClick={()=>handlerTest()}>  Next </button>
       </div>
+     
+     
+
+     
+    <Carousel>
+
+      <Carousel.Item interval={1000}>
+      <Image src={src}rounded />
+      </Carousel.Item>
+
+      <Carousel.Item interval={500}>  
+      <Image src={src} rounded />
+     </Carousel.Item>
+
+     <Carousel.Item interval={500}>  
+      <Image src={src} rounded />
+      </Carousel.Item>
+    
+     
+      <Carousel.Item interval={500}>  
+     <Image src={src} rounded />
+     </Carousel.Item>
+     </Carousel>
       </>
     )
-    
-  
+
   export default index
