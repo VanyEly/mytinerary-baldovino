@@ -78,3 +78,14 @@ button:focus-visible {
 img{
   min-width: 40vh;
 }
+
+.carousel{
+display: flex;
+justify-content: end;
+flex-direction: column;
+}
+
+img{
+ width : 500px;
+height: auto;
+}

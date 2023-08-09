@@ -1,13 +1,42 @@
 import 'react-bootstrap';
-
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-
+//import { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import { Image, Carousel } from 'react-bootstrap'
 import React, { useEffect, useState } from 'react'
-import { Carousel } from 'react-bootstrap';
+//import { Carousel } from 'react-bootstrap';
 //import Carousel from './Carousel'
 
-function Main() {
+function Main({src,contenido}) {
+  <Image src={src}>{contenido}</Image>
+   
+  
+  
+    let[carousel,setCarousel] = useState(1)
+    let [test,setTest] = useState(0)
+  
+  
+   let handlearBack = () => {
+     if(carousel != 1){
+           setCarousel( carousel -1)
+     }
+    
+   }
+  
+  let handlearUp = () => {
+     if(carousel != 3){
+         setCarousel(carousel + 1)
+  }
+  }
+  
+  let handlerTest = () => {
+    setTest(test+1)
+    console.log(test);
+  }
+  
+  useEffect(()=> {
+  console.log("efecto");
+  },[carousel])
 
 //let[image,setImage]=  useState("image")
 //setImage("nuevaimage")
@@ -25,10 +54,10 @@ function Main() {
     
 ]
 
+ return (
 
-  return (
-    <>
-  <main >
+<>
+
     <h1>Find the perfect destination</h1>
       <p>Our app will help you find the perfect pathh for your next trip. With an easy-to -use interface and a host of itinerary options, planning your next trip has never been easier.</p>
       <div className="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -42,10 +71,53 @@ function Main() {
 </div>
 
    {data.map(each =><Carousel src={each.src}/>)}
+
+        
+
+
+
+<div>
+  
+  { (carousel == 1  || carousel == 2 || carousel == 3 || carousel == Image3) ? <>
+{carousel == 1 &&  < Image src="https://www.universidades.com.ar/img/article/paisaje-de-argentina" />}
+{carousel == 2 &&  <Image src= "https://www.infobae.com/new-resizer/4lYgDG-DKV_GuzNXy8o2Xb5WIsI=/992x558/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/YVABRSOUERFRNGXG3HV2ZWV66A.jpg" className="d-block w-100" />}
+{carousel == 3 &&  <Image src="https://www.conclusion.com.ar/wp-content/uploads/2022/11/DSC_0224.jpg" className="d-block w-100" />}
+</>
+: 
+<>
+<p>No existe ese paso</p>
+</>
+
+
+}
+
+<button onClick={()=>handlearBack()}> Back </button>
+<button onClick={()=>handlearUp()}>  Next </button>
+
+</div>
+<Carousel>
+
+<Carousel.Item interval={1000}>
+<Image src={src}rounded />
+</Carousel.Item>
+
+<Carousel.Item interval={500}>  
+<Image src={src} rounded />
+</Carousel.Item>
+
+<Carousel.Item interval={500}>  
+<Image src={src} rounded />
+</Carousel.Item>
+
+
+<Carousel.Item interval={500}>  
+<Image src={src} rounded />
+</Carousel.Item>
+</Carousel>
    
-  </main>
+
   </>
   )
-  }
+}  
 export default Main
 
