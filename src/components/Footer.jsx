@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-function Footer(props) {
+
+function Footer() {
   return (
     <>© 2023 All rights reserved.</>
   )
 }
 
-Footer.propTypes = {}
 
 export default Footer
