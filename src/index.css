@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 *{
   margin: 0;
   padding: 0;
@@ -79,13 +84,20 @@ img{
   min-width: 40vh;
 }
 
-.carousel{
-display: flex;
-justify-content: end;
-flex-direction: column;
-}
+
 
 img{
- width : 500px;
+ width : 600px;
 height: auto;
+
+}
+
+button{
+  margin: 10px;
+
+}
+
+.article{
+display: flex;
+justify-content: center;
 }

@@ -1,15 +1,19 @@
 import React from 'react'
+import Anchors from './Anchor'
+import Button from './Button'
 
 function Nav() {
   return (
-    <>
-<nav>
-<h3>My Tinerary</h3>
-        <p>Home</p>
-        <p>Cities</p>
-        <button>Login</button>
-</nav>
-</>
+   <>
+    <div className='flex justify-around h-24'>
+
+
+       <nav className='flex  items-center gap-4 mx-4'>
+       <Anchors />
+      <Button name='Login'/>
+       </nav>
+   </div>
+   </>
   )
 }
 
