@@ -47,3 +47,12 @@ main{
   width: 100px;
   height: 150px;
 }
+
+.form{ 
+  width: 200px;
+  height: 40px;
+  border-color: azure;
+  background-color: aliceblue;
+  display: flex;
+  align-content: end;
+}

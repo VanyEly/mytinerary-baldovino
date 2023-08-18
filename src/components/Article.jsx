@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from './Button'
+import Form from 'react-bootstrap/Form'
+
 
 export default function Article() {
   return (
@@ -19,6 +21,17 @@ export default function Article() {
             <div className="w-10 m-4 ">
             <Button name="View More" />
             </div>
+           
+
+      <Form.Label  htmlFor="inputPassword5"><span>Busqueda : </span></Form.Label>
+      <Form.Control className="form"
+        type="busqueda"
+        id="inputPassword5"
+        aria-describedby="passwordHelpBlock"
+      />
+   
+ 
+
           </div>
           </div>
     </div>
