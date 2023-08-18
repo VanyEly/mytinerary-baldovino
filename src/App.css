@@ -37,4 +37,13 @@ main{
   flex-direction: row;
 }
 
-    
+.caro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caro img{
+  width: 100px;
+  height: 150px;
+}

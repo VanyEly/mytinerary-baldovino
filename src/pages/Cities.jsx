@@ -6,5 +6,7 @@ import MainCities from '../components/MainCities'
 export default function Cities() {
   return (
       <MainCities />
+
+      
   )
 }
