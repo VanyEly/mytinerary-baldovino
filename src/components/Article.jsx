@@ -1,9 +1,11 @@
 import React from 'react'
 import Button from './Button'
-import Form from 'react-bootstrap/Form'
+//import Form from 'react-bootstrap/Form'
 
 
 export default function Article() {
+  
+
   return (
     <div className=" flex flex-col w-[60%]  justify-center items-center mt-40">
       <div className="flex">
@@ -23,12 +25,7 @@ export default function Article() {
             </div>
            
 
-      <Form.Label  htmlFor="inputPassword5"><span>Busqueda : </span></Form.Label>
-      <Form.Control className="form"
-        type="busqueda"
-        id="inputPassword5"
-        aria-describedby="passwordHelpBlock"
-      />
+     
    
  
 
