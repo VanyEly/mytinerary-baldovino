@@ -1,6 +1,7 @@
 import { getCountry } from "../services/citiesQueries.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import React from "react";
 
 export  const DetailCity= () => {
   const [city, setCity] = useState({});
@@ -14,16 +15,16 @@ export  const DetailCity= () => {
 
     })
      .catch((err) => console.log(err)); 
-  }, [id]);
+  }, []);
 
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
-        <img src={city.photo} alt={city.name} />
+        <img src={`${city.photo}`} alt={`${city.name}`} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{city.name}</h2>
-        <p>{city.description}</p>
+        <h2 className="card-title">{`${city.country}`}</h2>
+        <p>{`${city.description}`}</p>
       </div>
       <div>
         <h2 className="text-black text-2xl text-center">

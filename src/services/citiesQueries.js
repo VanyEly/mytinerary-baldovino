@@ -15,7 +15,7 @@ export const getAllCountry = async () => {
 
 export const getCountry = async (id) => {
     try {
-       const{data} = await cities.get('/api/city'+id)
+       const{data} = await cities ('/api/city/'+id)
    
        return data
   } catch (error) {
