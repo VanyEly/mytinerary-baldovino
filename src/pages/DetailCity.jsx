@@ -1,3 +1,86 @@
+import { getCountry } from "../services/citiesQueries.js";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+export  const DetailCity= () => {
+  const [city, setCity] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    getCountry(id).then((res) => {
+      console.log("fetched details:", res);
+      if(res){setCity(res);}
+      else{ console.log("city not found")}
+
+    })
+     .catch((err) => console.log(err)); 
+  }, [id]);
+
+  return (
+    <div className="card lg:card-side bg-base-100 shadow-xl">
+      <figure>
+        <img src={city.photo} alt={city.name} />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{city.name}</h2>
+        <p>{city.description}</p>
+      </div>
+      <div>
+        <h2 className="text-black text-2xl text-center">
+          Under Construction...
+        </h2>
+      </div>
+    </div>
+  );
+}
+ export default DetailCity
+
+
+
+
+
+
+//import '../detailCity.css';
+
+
+//const Details = () => {
+ 
+
+  //return (
+    //<article className="bg-secondary rounded col-3 h-auto">
+    //<img src={ciudad.photo} className="w-100 h-75" />
+   // <h2 className="text-center text-white py-3">{ciudad.name}</h2>
+
+  //</article>
+ // );
+//};
+
+//export default Details;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //let params = new URLSearchParams(document.location.search)
 //let id = params.get("id")
 

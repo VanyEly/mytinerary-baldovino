@@ -3,20 +3,23 @@ import axios from 'axios';
 const cities = axios.create({
     baseURL: 'http://localhost:3000',
 });
-export const getAllCities = async () => {
+export const getAllCountry = async () => {
     try {
-        const {data} = await cities('/api/cities')
-        return data.cities
-    } catch (error) {
+      const {data} = await cities.get('/api/cities')
+         return data  
+       } catch (error) {
+ 
  return[]
     }
 }
 
-export const getCity = async () => {
+export const getCountry = async (id) => {
     try {
-        const{data} = await cities('/api/cities'+id)
-        return data.cities
-    } catch (error) {
-        return []
+       const{data} = await cities.get('/api/city'+id)
+   
+       return data
+  } catch (error) {
+       return []
     }
 }
+

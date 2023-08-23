@@ -1,17 +1,17 @@
-import React from 'react'
+//import React from 'react'
 //import Button from './Button'
 //import Form from 'react-bootstrap/Form'
-import Filter from './Filter'
-import Cars from './Cars'
+//import Filter from './Filter'
+//import Cars from './Cars'
 
-export default function MainCities() {
+//export default function MainCities() {
 
 
-  return (
-    <>
+  //return (
+  //  <>
   
-     <Filter/>
-     <Cars/>
-      </>
-  )
-}
+    // <Filter/>
+    // <Cars/>
+  //    </>
+ // )
+//}
