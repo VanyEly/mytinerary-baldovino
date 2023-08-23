@@ -1,7 +1,11 @@
 import React from 'react'
 import Button from './Button'
+//import Form from 'react-bootstrap/Form'
+
 
 export default function Article() {
+  
+
   return (
     <div className=" flex flex-col w-[60%]  justify-center items-center mt-40">
       <div className="flex">
@@ -19,6 +23,12 @@ export default function Article() {
             <div className="w-10 m-4 ">
             <Button name="View More" />
             </div>
+           
+
+     
+   
+ 
+
           </div>
           </div>
     </div>

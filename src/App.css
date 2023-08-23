@@ -37,4 +37,23 @@ main{
   flex-direction: row;
 }
 
-    
+.caro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caro img{
+  width: 100px;
+  height: 150px;
+}
+
+.form{ 
+  width: 200px;
+  height: 60px;
+  border-color: azure;
+  background-color: aliceblue;
+  display: flex;
+  align-content: end;
+  justify-content: start;
+}

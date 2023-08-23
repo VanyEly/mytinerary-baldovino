@@ -7,7 +7,7 @@ function Nav() {
    <>
     <div className='flex justify-around h-24'>
 
-
+          
        <nav className='flex  items-center gap-4 mx-4'>
        <Anchors />
       <Button name='Login'/>
