@@ -1,15 +1,30 @@
 import React from 'react'
 //import Button from './Button'
 import Form from 'react-bootstrap/Form'
-
+import axios from 'axios';
+import React, { useRef } from 'react';
 
 
 export default function Filter() {
 
-    const handlerSubmit = (e) => {
+    const handlerSubmite = (e) => {
         e.preventDefault()
        };
 
+       const formularioCity = ({ setCountry}) => {
+        let inputNombreRef = useRef()
+
+  const crearCountry = () => {
+
+
+    axios.get("/cities/")
+    .then(response => 
+        
+      console.log("Cities: " , response.data.name)
+      // setCountry(response.data)
+      )
+         }    
+          }
       // let formulario = document.getElementById('formulario');
 
        // console.log(formulario);
@@ -31,7 +46,7 @@ export default function Filter() {
        //});
   return (
     <>
-      <Form.Label  htmlFor="inputPassword5" onSubmit ={ handlerSubmit}>   <button>
+      <Form.Label  htmlFor="inputPassword5" onSubmit ={ handlerSubmite}>   <button>
     🔎
       </button></Form.Label>
       <Form.Control className="form"
