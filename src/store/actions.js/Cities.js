@@ -1,29 +1,16 @@
 import { createAction } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from 'axios';
 
-const add_cities = createAction("add_cities", (array) => {
+ export const add_cities = createAction("add_cities", (array) => {
   return {
     payload: array
   };
 });
-
-const filter_city = createAsyncThunk('filter_city', async (id)=> {
-
-try {
   
-    const city = await  axios.get("http://localhost:3000/api/city/"+id)
-    .then ((response) => response.data)
 
-return {
-  city: city
-}
-
-
-} catch (error) {
-  console.log(e.message);
-}
-
+export const addCitiesAsync = createAsyncThunk("add_cities_async",async()=>{
+    const peticion = await axios("http://localhost:3000/api/cities")
+    return peticion.data
 })
 
-const citiesActions = { add_cities ,filter_city };
-export default citiesActions;

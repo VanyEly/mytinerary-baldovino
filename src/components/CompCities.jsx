@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import citiesActions from '../store/actions.js/Cities';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { add_cities } from '../store/actions.js/Cities';
 
   const CompCities = () => {
   
@@ -24,7 +25,7 @@ const filterCity = () => {
      // console.log(response.data);
      //   }
        // )
-dispatch(citiesActions.filter_city(InputNameRef.current.value))
+dispatch(add_cities(data).filter_city(InputNameRef.current.value))
 
       }
   
