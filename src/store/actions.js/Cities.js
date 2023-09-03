@@ -14,3 +14,11 @@ export const addCitiesAsync = createAsyncThunk("add_cities_async",async()=>{
     return peticion.data
 })
 
+
+export const add_city = createAction("add_city", (city) => {
+  return {
+    payload: {
+      city: city,
+    },
+  };
+});

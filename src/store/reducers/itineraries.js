@@ -20,9 +20,9 @@ const get_itineraries = createAsyncThunk('get_itineraries', async (cityId)=>{
     
 })
 
-
+/* NO FUNCIONA- Tira un error 404 en la peticion */
 const reset_itineraries = createAction( 'reset_itineraries', () => {
-   
+    console.log(reset_itineraries);
     return {
         payload: {
             itineraries: null

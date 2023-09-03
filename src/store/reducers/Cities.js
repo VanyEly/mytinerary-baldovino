@@ -12,6 +12,15 @@ const initialState = {
       itineraries: [],
     },
   ],
+  city: [
+    {
+      name: "",
+      country: "",
+      photo: "",
+      description: "",
+      itineraries: [],
+    },
+  ],
 };
 
 const citiesReducer = createReducer(initialState, (builder) => {
@@ -27,6 +36,10 @@ const citiesReducer = createReducer(initialState, (builder) => {
     }
   })
 
+  .addCase(citiesActions.add_city, (state, action) => {
+    const newState = { ...state, city: action.payload.city };
+    return newState;
+  })
 
 });
 

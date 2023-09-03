@@ -1,6 +1,6 @@
 import React from "react";
 import DetailsCities from "../components/DetailsCities";
-import Itinerary from "../components/Itinerary";
+
 
 function DetailCity() {
 
@@ -9,7 +9,7 @@ function DetailCity() {
           
 
           <DetailsCities /> 
-          < Itinerary /> 
+         
 
       </>
   )

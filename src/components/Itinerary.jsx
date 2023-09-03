@@ -1,19 +1,27 @@
-export default function itinerary(props) {
-       const inputs = props.inputObj
-    const values = props.values
-    
-    return (
-         <>  
-      <label key={inputs._id} className="Form-label">{inputs.name}:
-                <input className="Form-input" type={inputs.type} name={inputs.name} defaultValue={values? values: ""} placeholder={inputs.ph} required />
-            </label>
-     
-  <section id="itineraries" className="relative scroll-smooth h-screen overflow-hidden flex flex-col snap-start min-h-[600px] justify-center">
-        <div className="z-20 max-w-5xl w-50 mx-50 bg-[#FCFCFF] flex flex-col items-center py-12 mb-6">
-        
-          <h2 className=" my-6 text-2xl lg:my-8">Under construction</h2>
+import React from "react";
+
+
+export default function Itinerary({ itinerary }) {
+
+  return (
+    <div className="bg-blue-400 rounded-lg m-7">
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="text-center font-bold text-xl">{itinerary.name}</h2>
+        <figure className="w-24 h-24 rounded-sm">
+          <img src={itinerary.photo} alt={itinerary.name} />
+        </figure>
+      </div>
+      <div>
+        <div className="flex flex-row justify-around my-4 items-center font-bold">
+          <div className="flex flex-row">
+            <div className="self-center">
+              
+            </div>
+            <p className=""> {itinerary.price}</p>
+          </div>
+          <p>Duration: {itinerary.duration} hs</p>
         </div>
-      </section>
-</>
- )
-  }
+      </div>
+    </div>
+  );
+}
