@@ -5,10 +5,11 @@ import Acordion from "./Acordion";
 
 
 const Itinerary = ({ itinerary }) => {
+    console.log(itinerary);
     return (
         <>
         <div className="bg-white   rounded-lg shadow-md p-4 mb-4">
-        <h2 className="text-2xl text-center font-semibold mb-2 py-5 text-fuchsia-700">{itinerary.name}</h2>
+        <h2 className="text-2xl text-center font-semibold mb-2 py-5">{itinerary.name}</h2>
         <p className="text-gray-600 text-center mb-3">{itinerary.description}</p>
 
         {/* Info section */}
@@ -22,7 +23,7 @@ const Itinerary = ({ itinerary }) => {
                     
                 </div>
                 <div className="flex  flex-col items-center space-y-2">
-                    <span className="rounded-full h-12 w-12 text-5xl text-fuchsia-500" > <HiOutlineHeart /></span>
+                    <span className="rounded-full h-12 w-12 text-5xl" > <HiOutlineHeart /></span>
                         
                         <div className="flex flex-col space-y-2 text-sm text-gray-600  ">
                             <span> {itinerary.likes.length} </span>  
@@ -30,7 +31,7 @@ const Itinerary = ({ itinerary }) => {
                     
                 </div>
                 <div className="flex  flex-col items-center space-y-2">
-                        <span className="rounded-full h-12 w-12 text-5xl text-fuchsia-500" > <HiOutlineClock/></span>
+                        <span className="rounded-full h-12 w-12 text-5xl" > <HiOutlineClock/></span>
                         <div className="flex flex-col space-y-2 text-sm text-gray-600  ">
                             <span> {itinerary.duration + " hs"} </span>  
                         </div>
@@ -40,12 +41,14 @@ const Itinerary = ({ itinerary }) => {
                         
                         <div className="flex flew-row ">
 
-                            {
+                         {/* {
                                     [... new Array(3)].map((money, index)=>{
-                                        const priceAr = index< itinerary.price ?   <span className="rounded-full h-12 w-12 text-5xl justify-between text-fuchsia-500" > <PiMoneyFill/></span> :  <span className="rounded-full h-12 w-12 text-5xl text-fuchsia-500" > <PiMoneyLight/></span>
+                                        const priceAr = index< itinerary.price ?   <span key={index} className="rounded-full h-12 w-12 text-5xl justify-between text-fuchsia-500" ></span> :  <span key={index}className="rounded-full h-12 w-12 text-5xl text-fuchsia-500" > </span>
                                         return priceAr
                                     })
 
+                            } */
+                       
                             }
     
                         </div>

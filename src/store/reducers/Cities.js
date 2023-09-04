@@ -12,7 +12,8 @@ const initialState = {
       itineraries: [],
     },
   ],
- 
+
+
 };
 
 const citiesReducer = createReducer(initialState, (builder) => {
@@ -31,11 +32,22 @@ const citiesReducer = createReducer(initialState, (builder) => {
   .addCase( cargarCityAsync.fulfilled, ( stateActual, action ) =>{
     return {
         ...stateActual,
-        event : action.payload
+        cities : [action.payload]
       }
     })
 
+    //.addCase(citiesActions.add_city_filtered, (state, action) => {
+      //const filter = action.payload.cities.filter((city) =>
+ //       city.name.toLowerCase().includes(action.payload.inputValue)
+   //   );
+     // const newState = { ...state, cityFiltered: filter };
+    //  return newState;
+    //})
 
+//.addCase (filterCity.fulfilled, ( stateActual, action ) =>{
+  //const newState = { ...state, cities: action.payload.event };
+  //   return new stateActual
+ //})
 
 
 })

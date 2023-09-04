@@ -7,6 +7,7 @@ import AllCities from "../components/AllCities";
 //import Filtro from "../components/Filtro";
 
 import CompCities from "../components/CompCities";
+//import Filter from "../components/Filter";
 
 //import Citid from "../components/Citid"
 
@@ -15,6 +16,7 @@ function Cities() {
 
     return (
         <>
+         
              <CompCities/>
             <AllCities/>
           

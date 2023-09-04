@@ -32,7 +32,9 @@ const itinerariesReducer = createReducer(initialState, (builder)=>{
                     return {
                         ...state, itineraries : action.payload
                     }
-        } )
+                    })
+                    
+                    
 })
 
 export default itinerariesReducer

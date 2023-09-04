@@ -10,12 +10,14 @@ import CityDescription from "./CityDescripction";
 const DetailsCities = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const cityInStore = useSelector((store) => store.citiesReducer.cities);
-
+  const cityInStore = useSelector((store) => store.citiesReducer.cities[0]);
+console.log(cityInStore);
   const itinerariesInStore = useSelector(store => store.itinerariesReducer.itineraries)
 
   useEffect(() => {
+    
     dispatch(cargarCityAsync(id));
+  
   }, []);
   return (
     <>
