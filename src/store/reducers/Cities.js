@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import  {add_cities, addCitiesAsync, cargarCityAsync } from "../actions.js/Cities";
+import  {add_cities, addCitiesAsync, cargarCityAsync} from "../actions.js/Cities";
 
 
 const initialState = {
@@ -32,12 +32,13 @@ const citiesReducer = createReducer(initialState, (builder) => {
     return {
         ...stateActual,
         event : action.payload
-    }
-} )
-});
+      }
+    })
 
 
 
+
+})
 
 export default citiesReducer;
 

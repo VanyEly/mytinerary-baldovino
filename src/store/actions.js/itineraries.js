@@ -5,7 +5,7 @@ const get_itineraries = createAsyncThunk('get_itineraries', async (cityId)=>{
     
     
     try {
-        const itineraries=   await axios.get("http://localhost:3000/api/itineraries/"+ cityId)
+        const itineraries=   await axios.get("http://localhost:3000/api/itineraries"+ cityId)
         
         
         
