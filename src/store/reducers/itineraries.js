@@ -1,37 +1,38 @@
-import { createAction, createAsyncThunk,  } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createReducer } from "@reduxjs/toolkit";
+import itinerariesActions from "../actions.js/itineraries";
 
-const get_itineraries = createAsyncThunk('get_itineraries', async (cityId)=>{
-    
-    
-    try {
-        const itineraries=   await axios.get("http://localhost:3000/api/itineraries/"+ cityId)
-        
-        
-        
-        return {
-            
-            itineraries: itineraries.data.itineraries
-        }
-        
-    } catch (error) {
-        console.log(error.message);
-    }
-    
+
+
+const initialState = {
+    itineraries: [
+        {
+          
+      name: "",
+      nameImg:"",
+      description: "",
+      activities: [],
+      comments:[],
+      duration: 0,
+      likes: [],
+      price: 0,
+      hashtags: [],
+      _city:""
+    },
+
+    ]
+}
+const itinerariesReducer = createReducer(initialState, (builder)=>{
+
+            return builder
+                    .addCase(itinerariesActions.get_itineraries.fulfilled,(state,action)=>{
+                        const newState = {...state, itineraries: action.payload.itineraries}
+                        return newState
+                    })
+                     .addCase( itinerariesActions.reset_itineraries, (state, action) => {
+                    return {
+                        ...state, itineraries : action.payload
+                    }
+        } )
 })
 
-/* NO FUNCIONA- Tira un error 404 en la peticion */
-const reset_itineraries = createAction( 'reset_itineraries', () => {
-    console.log(reset_itineraries);
-    return {
-        payload: {
-            itineraries: null
-        }
-    }
-} )
-
-
-
-const itinerariesActions = {get_itineraries, reset_itineraries}
-
-export default itinerariesActions
+export default itinerariesReducer

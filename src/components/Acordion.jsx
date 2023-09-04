@@ -32,7 +32,7 @@ const Acordion = () => {
              Under Maintenance
            </h1>
            <p className="font-light text-gray-500 md:text-lg xl:text-xl dark:text-gray-400">
-             Come back later
+          
            </p>
            <br />
 

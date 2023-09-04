@@ -1,45 +1,56 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import React from "react";
-import { getCountry } from "../services/citiesQueries.js";
-import { useDispatch, useSelector } from "react-redux";
-import Itinerary from "./Itinerary.jsx";
-import { add_city } from "../store/actions.js/Cities";
+import { useSelector, useDispatch } from "react-redux";
 
-export  const DetailsCities= () => {
- 
-  let cityInStore = useSelector((store) => store.citiesReducer.city);
-  const dispatch = useDispatch();
+import { cargarCityAsync } from "../store/actions.js/Cities";
+import Itinerary from "./Itinerary";
+import CityDescription from "./CityDescripction";
+
+
+const DetailsCities = () => {
   const { id } = useParams();
-  useEffect(() => {
-    getCountry(id)
-      .then((data) => dispatch(add_city(data)))
-      .catch((err) => console.log(err));
-  },[]);
+  const dispatch = useDispatch();
+  const cityInStore = useSelector((store) => store.citiesReducer.cities);
 
+  const itinerariesInStore = useSelector(store => store.itinerariesReducer.itineraries)
+
+  useEffect(() => {
+    dispatch(cargarCityAsync(id));
+  }, []);
   return (
-    <div className="flex justify-center items-center flex-col mx-10">
-      <div className="card lg:card-side bg-base-100">
-        <figure>
-          <img src={cityInStore.photo} alt={cityInStore.name} />
-        </figure>
-        <div className="card-body w-[60%] self-center">
-          <h2 className="card-title text-4xl">{cityInStore.name}</h2>
-          <p>{cityInStore.description}</p>
-          <div className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center">
-         
-          </div>
-        </div>
+    <>
+    <div className=" px-4   mx-auto  flex  flex-col justify-end">
+      <CityDescription
+        key={cityInStore._id}
+        cityImage={cityInStore.photo}
+        cityName={cityInStore.name}
+        CityDesc={cityInStore.description}
+      />
+
+      {/* itineraries section */}
+      <div className="container mx-auto p-4 mt-5 ">
+      
+        {itinerariesInStore.length > 0 ? (
+          itinerariesInStore.map((itinerary, i) => (
+            <Itinerary key={i} itinerary={itinerary} />
+          ))
+        ) : (
+          <h2 className="font-light text-gray-500 md:text-lg xl:text-xl dark:text-gray-400 text-center my-5 bg-white rounded-md shadow-lg p-5">
+            {" "}
+            This city doesn´t have itineraries yet
+          </h2>
+        )}
       </div>
-      <div className="w-full m-5 p-5">
-        {cityInStore.itineraries?.map((itinerary, i) => (
-          <Itinerary itinerary={itinerary} key={i} />
-        ))}
+
+      {/* back to Cities Button */}
+      <div className="mx-auto justify-center">
+       
       </div>
     </div>
+  </>
   );
+};
 
-}
-
+export default DetailsCities;
 
 

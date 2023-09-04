@@ -14,6 +14,14 @@ export const addCitiesAsync = createAsyncThunk("add_cities_async",async()=>{
     return peticion.data
 })
 
+export const cargarCityAsync = createAsyncThunk("cargar_city_async", async( id ) => {
+  try {
+      const peticion = await axios ("http://localhost:3000/api/city/" + id  )
+      return peticion.data.response
+  } catch (error) {
+      
+  }
+} );
 
 export const add_city = createAction("add_city", (city) => {
   return {
