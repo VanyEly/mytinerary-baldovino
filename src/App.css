@@ -57,3 +57,20 @@ main{
   align-content: end;
   justify-content: start;
 }
+
+article img {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details {
+background-color:blue;
+color: white;
+width: 10px;
+height: 17px;
+border-radius: 20%;
+
+}

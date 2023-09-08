@@ -1,53 +1,35 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+
 import axios from 'axios';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { add_cities } from '../store/actions.js/Cities';
+import { addCitiesFilter, add_cities } from '../store/actions.js/Cities';
+
 
   const CompCities = () => {
   
- let InputNameRef = useRef()
+ let input = useRef()
+ const cities = useSelector(store => store.citiesReducer.citiesFilter)
+console.log(cities);
 
-  //const params = useParams();
-    //console.log(params);
-    //const [cities, setCities] = useState([]);
-    //const [search, setSearch] = useState("");
-
-    //const [results, setResults] = useState([]);
   const dispatch =useDispatch()
 
 
 const filterCity = () => {
-    //useEffect(() => {
-    //  axios.get('http://localhost:3000/api/cities')
-      //  .then(response => {
-     // console.log(response.data);
-     //   }
-       // )
-dispatch(add_cities(data).filter_city(InputNameRef.current.value))
+   
+dispatch(addCitiesFilter(input.current.value))
 
       }
   
-   // const searcher = (e) => {
-     // setSearch(e.target.value);
-     // console.log(e.target.value);
-  
-     // const filteredCities = cities.filter(dato =>
-           
-       // dato.name.toLowerCase().startsWith(search.toLowerCase())
-      
-      //);
+   
 
-     // setResults(search.trim() === "" ? cities : filteredCities);
 
-  // };
   
     return (
 
     
        <div>
-         <input ref={InputNameRef} type="text" placeholder='search' className='form-control' />
+         <input ref={input} type="text" placeholder='search' className='form-control' />
           <button onClick={()=>filterCity()} className="btn btn-secondary">🔍</button>
         </div>
       

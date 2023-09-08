@@ -25,6 +25,10 @@ export const cargarCityAsync = createAsyncThunk("cargar_city_async", async( id )
   }
 } );
 
+export const addCitiesFilter = createAsyncThunk("add_cities_filter_async",async(value)=>{
+  const peticion = await axios("http://localhost:3000/api/cities?name=" + value)
+  return peticion.data
+})
 
  //export const add_city_filtered = createAction("add_city_filtered", (array, search) => {
  // return {

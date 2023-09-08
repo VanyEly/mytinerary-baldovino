@@ -29,7 +29,7 @@ export default function SearchCity() {
       />
       <div className="self-center">
         <button className="btn" onInput={handleInput}>
-          <BsSearch />
+        search
         </button>
       </div>
     </div>

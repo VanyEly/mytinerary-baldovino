@@ -24,7 +24,7 @@ function BasicExample() {
         Sing In
       </Button>
       <Button variant="secondary" type="submit">
-        Forgot password
+      
       </Button>
     </Form>
   );

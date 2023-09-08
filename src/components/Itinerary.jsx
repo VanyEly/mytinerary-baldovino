@@ -1,11 +1,11 @@
 
 import { HiOutlineClock, HiOutlineHeart} from "react-icons/hi";
-import { PiMoneyFill, PiMoneyLight} from "react-icons/pi";
+
 import Acordion from "./Acordion";
 
 
 const Itinerary = ({ itinerary }) => {
-    console.log(itinerary);
+ 
     return (
         <>
         <div className="bg-white   rounded-lg shadow-md p-4 mb-4">
@@ -41,15 +41,7 @@ const Itinerary = ({ itinerary }) => {
                         
                         <div className="flex flew-row ">
 
-                         {/* {
-                                    [... new Array(3)].map((money, index)=>{
-                                        const priceAr = index< itinerary.price ?   <span key={index} className="rounded-full h-12 w-12 text-5xl justify-between text-fuchsia-500" ></span> :  <span key={index}className="rounded-full h-12 w-12 text-5xl text-fuchsia-500" > </span>
-                                        return priceAr
-                                    })
-
-                            } */
-                       
-                            }
+               
     
                         </div>
                         <div className="flex flex-col space-y-2 text-sm text-gray-600  ">
@@ -57,23 +49,11 @@ const Itinerary = ({ itinerary }) => {
                         </div>
                     
                 </div>
-                
-                 <div className="flex  flex-col items-center space-y-2">
-                        
-                        <div className="flex  flex-row flex-wrap items-start  gap-3 ">
-
-                            { itinerary.hashtags.map((hash,index)=>{
-                            return <span key={index} className="rounded-full  p-2 text-xs text-white bg-fuchsia-400"> {"#"+hash} </span>
-                        
-                        })}
-                        
-                            
-                        </div>
+            
                         <div className="flex flex-col space-y-2 text-sm text-gray-600  ">
                             <span>Hashtags</span>  
                         </div>
-                    
-                </div>
+               
                  
             </div>
 

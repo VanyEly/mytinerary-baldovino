@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import  {add_cities, addCitiesAsync, cargarCityAsync} from "../actions.js/Cities";
+import  {add_cities, addCitiesAsync, addCitiesFilter, cargarCityAsync} from "../actions.js/Cities";
 
 
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
       itineraries: [],
     },
   ],
-
+citiesFilter:[],
 
 };
 
@@ -35,19 +35,12 @@ const citiesReducer = createReducer(initialState, (builder) => {
         cities : [action.payload]
       }
     })
+.addCase (addCitiesFilter.fulfilled,(stateActual, action) =>{
+  return {
+    ...stateActual,
+    citiesFilter: action.payload
+}})
 
-    //.addCase(citiesActions.add_city_filtered, (state, action) => {
-      //const filter = action.payload.cities.filter((city) =>
- //       city.name.toLowerCase().includes(action.payload.inputValue)
-   //   );
-     // const newState = { ...state, cityFiltered: filter };
-    //  return newState;
-    //})
-
-//.addCase (filterCity.fulfilled, ( stateActual, action ) =>{
-  //const newState = { ...state, cities: action.payload.event };
-  //   return new stateActual
- //})
 
 
 })
