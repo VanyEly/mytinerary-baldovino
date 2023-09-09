@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { cargarCityAsync } from "../store/actions.js/Cities";
 import Itinerary from "./Itinerary";
 import CityDescription from "./CityDescripction";
+import itinerariesActions from "../store/actions.js/itineraries";
 
 
 const DetailsCities = () => {
@@ -12,12 +13,13 @@ const DetailsCities = () => {
   const dispatch = useDispatch();
   const cityInStore = useSelector((store) => store.citiesReducer.cities[0]);
 console.log(cityInStore);
-  const itinerariesInStore = cityInStore?._itineraries
+  const itinerariesInStore = useSelector((store) => store.itinerariesReducer.itineraries);
 console.log(itinerariesInStore);
   useEffect(() => {
     
     dispatch(cargarCityAsync(id));
-  
+    dispatch(itinerariesActions.get_itineraries());
+
   }, []);
   return (
     <>
@@ -31,19 +33,14 @@ console.log(itinerariesInStore);
 
       {/* itineraries section */}
       <div className="container mx-auto p-4 mt-5 ">
-      
-        {/* {itinerariesInStore?.length > 0 ? (
-          itinerariesInStore?.map((itinerary, i) => (
+   
+        {itinerariesInStore?.map((itinerary, i) => (
+          
             <Itinerary key={i} itinerary={itinerary} />
-          ))
-        ) : (
-          <h2 className="font-light">
-            This city doesn´t have itineraries 
-          </h2>
-        )} */}
-      </div>
+        ))}
 
-     
+      </div>
+  
     </div>
   </>
   );

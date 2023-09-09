@@ -11,7 +11,7 @@ const get_itineraries = createAsyncThunk('get_itineraries', async (cityId)=>{
         
         return {
             
-            itineraries: itineraries.data.itineraries
+            itineraries: itineraries.data._itineraries
         }
         
     } catch (error) {

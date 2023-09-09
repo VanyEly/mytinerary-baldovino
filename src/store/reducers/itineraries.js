@@ -6,12 +6,8 @@ import itinerariesActions from "../actions.js/itineraries";
 const initialState = {
     itineraries: [
         {
-          
       name: "",
       nameImg:"",
-      description: "",
-      activities: [],
-      comments:[],
       duration: 0,
       likes: [],
       price: 0,
@@ -25,7 +21,7 @@ const itinerariesReducer = createReducer(initialState, (builder)=>{
 
             return builder
                     .addCase(itinerariesActions.get_itineraries.fulfilled,(state,action)=>{
-                        const newState = {...state, itineraries: action.payload.itineraries}
+                        const newState = {...state, itineraries: action.payload._itineraries}
                         return newState
                     })
                      .addCase( itinerariesActions.reset_itineraries, (state, action) => {
