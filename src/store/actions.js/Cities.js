@@ -43,7 +43,7 @@ export const addCitiesFilter = createAsyncThunk("add_cities_filter_async",async(
 export const add_city = createAction("add_city", (city) => {
   return {
     payload: {
-      city: city,
+      cities: cities,
     },
   };
 });

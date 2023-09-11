@@ -6,7 +6,7 @@ import Itinerary from "./Itinerary";
 import CityDescription from "./CityDescripction";
 
 import { getCountry } from "../services/citiesQueries";
-import { add_city } from "../store/actions.js/Cities";
+import { addCitiesAsync, add_city, cargarCityAsync } from "../store/actions.js/Cities";
 import itinerariesActions from "../store/actions.js/itineraries";
 
 
@@ -15,12 +15,12 @@ const DetailsCities = () => {
   const dispatch = useDispatch();
  //const itinerarydispatch = useDispatch()
 
-  const [cityInStore]= useSelector((store) => store.citiesReducer.cities);
+  const cityInStore = useSelector((store) => store.citiesReducer.cities[0]);
 console.log(cityInStore);
 
   useEffect(() => {
     getCountry(id)
-      .then((data) => dispatch(add_city(data)))
+      .then((data) => dispatch(addCitiesAsync(data)))
       .catch((err) => console.log(err));
 
       return () => {
