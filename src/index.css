@@ -102,7 +102,7 @@ display: flex;
 justify-content: center;
 }
 
-img #fotoPerfil{
+.fotoPerfil{
   width: 200px;
   height: 200px;
 }

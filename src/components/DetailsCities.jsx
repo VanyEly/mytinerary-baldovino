@@ -15,7 +15,7 @@ const DetailsCities = () => {
   const dispatch = useDispatch();
  //const itinerarydispatch = useDispatch()
 
-  const cityInStore = useSelector((store) => store.citiesReducer.cities[0]);
+  const [cityInStore]= useSelector((store) => store.citiesReducer.cities);
 console.log(cityInStore);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ console.log(cityInStore);
         cityImage={cityInStore.photo}
         cityName={cityInStore.name}
         CityDesc={cityInStore.description}
-        citi
+        
       />
 
       {/* itineraries section */}

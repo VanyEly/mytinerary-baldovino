@@ -1,12 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import axios from 'axios';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addCitiesFilter, add_cities } from '../store/actions.js/Cities';
-import CityCard from './CityCard';
-import { getCountry } from '../services/citiesQueries';
-import { useParams } from 'react-router-dom';
 
 
   const CompCities = () => {

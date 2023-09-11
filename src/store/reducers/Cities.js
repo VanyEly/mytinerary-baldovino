@@ -43,7 +43,6 @@ const citiesReducer = createReducer(initialState, (builder) => {
 }})
 
 
-
 })
 
 export default citiesReducer;
