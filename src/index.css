@@ -101,3 +101,8 @@ button{
 display: flex;
 justify-content: center;
 }
+
+img #fotoPerfil{
+  width: 200px;
+  height: 200px;
+}

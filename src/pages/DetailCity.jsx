@@ -1,7 +1,7 @@
 import React from "react";
 import DetailsCities from "../components/DetailsCities";
-import { Anchor } from "react-bootstrap";
 
+import { Link as Anchor } from "react-router-dom";
 
 function DetailCity() {
 
@@ -10,8 +10,8 @@ function DetailCity() {
           
 
           <DetailsCities /> 
-          {/* <Anchor className="btn btn-secondary" to={`/cities${cities}`}>Back</Anchor>  */}
-
+       
+          <Anchor className="primary" to="/cities">Back to Cities</Anchor>
       </>
   )
 }

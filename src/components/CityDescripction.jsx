@@ -1,3 +1,4 @@
+import Itinerary from "./Itinerary"
 
 
 function CityDescription({cityImage, cityName, CityDesc}) {
@@ -7,7 +8,7 @@ function CityDescription({cityImage, cityName, CityDesc}) {
       <img  className="aspect-square w-1/2 rounded-2xl" src={cityImage} />
       <h2 className="font-bold">{cityName} </h2>
       <p>{CityDesc}</p>
-     
+  
   </div>
     )
   }

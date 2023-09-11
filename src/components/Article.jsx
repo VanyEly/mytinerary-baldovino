@@ -21,7 +21,7 @@ export default function Article() {
         <div className='article'> 
         <img className="w-20 h-20 rounded" src="https://w0.peakpx.com/wallpaper/822/642/HD-wallpaper-world-map-world-flags-map-countries.jpg"  />
             <div className="w-10 m-4 ">
-            <Button name="View More" />
+        
             </div>
            
 

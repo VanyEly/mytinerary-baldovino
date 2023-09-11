@@ -1,15 +1,13 @@
-import { createAction, createAsyncThunk,  } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const get_itineraries = createAsyncThunk('get_itineraries', async (cityId)=>{
     
     
     try {
-        const itineraries=   await axios.get("http://localhost:3000/api/itineraries"+ cityId)
+        const itineraries=   await axios.get("http://localhost:3000/api/itineraries/"+ cityId)
         
-        
-        
-        return {
+         return {
             
             itineraries: itineraries.data._itineraries
         }

@@ -2,23 +2,30 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { cargarCityAsync } from "../store/actions.js/Cities";
 import Itinerary from "./Itinerary";
 import CityDescription from "./CityDescripction";
+
+import { getCountry } from "../services/citiesQueries";
+import { add_city } from "../store/actions.js/Cities";
 import itinerariesActions from "../store/actions.js/itineraries";
 
 
 const DetailsCities = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+ //const itinerarydispatch = useDispatch()
+
   const cityInStore = useSelector((store) => store.citiesReducer.cities[0]);
 console.log(cityInStore);
-  const itinerariesInStore = useSelector((store) => store.itinerariesReducer.itineraries);
-console.log(itinerariesInStore);
+
   useEffect(() => {
-    
-    dispatch(cargarCityAsync(id));
-    dispatch(itinerariesActions.get_itineraries());
+    getCountry(id)
+      .then((data) => dispatch(add_city(data)))
+      .catch((err) => console.log(err));
+
+      return () => {
+        dispatch(itinerariesActions.reset_itineraries());
+      };
 
   }, []);
   return (
@@ -29,19 +36,21 @@ console.log(itinerariesInStore);
         cityImage={cityInStore.photo}
         cityName={cityInStore.name}
         CityDesc={cityInStore.description}
+        citi
       />
 
       {/* itineraries section */}
-      <div className="container mx-auto p-4 mt-5 ">
+    
    
-        {itinerariesInStore?.map((itinerary, i) => (
-          
-            <Itinerary key={i} itinerary={itinerary} />
+          <div className="w-full m-5 p-5">
+        {cityInStore._itineraries?.map((itinerary, i) => (
+          <Itinerary itinerary={itinerary} key={i} />
         ))}
+      </div>
 
       </div>
   
-    </div>
+   
   </>
   );
 };
