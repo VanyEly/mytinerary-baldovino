@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
 import { signIn } from "../store/actions.js/userActions.js";
@@ -24,7 +24,7 @@ const SignIn = () => {
       dispatch(signIn(body)).then((response) => {
         if (response.payload.success) {
           alert("Bienvenido " + response.payload.user.name);
-          navigate("/");
+          Navigate("/");
         }
       });
     }
@@ -37,9 +37,10 @@ const SignIn = () => {
       password: userData.given_name + userData.sub,
     };
     dispatch(signIn(body)).then((respuestaDelAction) => {
+      console.log(respuestaDelAction);
       if (respuestaDelAction.payload.success) {
         alert("Bienvenido " + respuestaDelAction.payload.user.name);
-        navigate("/");
+        Navigate("/");
       }
     });
   };

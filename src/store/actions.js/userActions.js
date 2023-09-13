@@ -1,5 +1,7 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios'
+import Swal from "sweetalert2";
+
 export const cargarUsuario = createAction( 'cargar_usuario', (user) => {
     return {
         payload : user
@@ -20,10 +22,17 @@ export const signIn = createAsyncThunk( "logear", async ( body ) => {
     try {
         const response = await axios.post( 'http://localhost:3000/api/user/login', body )
         localStorage.setItem( 'token', response.data.token )
-        return response.data
+    return response.data
+       
     } catch (error) {
-        console.log( error )
+       // console.log( error )
+       Swal.fire({
+        icon: 'error',
+        title: 'Oops..!',
+        text:  error.message,
+       }).then(()=>{window.location.replace("/")})
     }
+     
 } )
 
 
@@ -53,16 +62,16 @@ export const logout = createAction( "reset", () => {
 } )
 
 
-export const obtenerTodosLosUsuarios = ()=>{
-    return async(dispatch,getState) =>{
-        try{
-            const usuarios = await axios.get('http://localhost:4000/api/usuarios')
-            dispatch({type:'usuarios', payload: usuarios.data.response})
-        }catch(error){
-            console.error(error);
-        }
-    }
-}
+// export const obtenerTodosLosUsuarios = ()=>{
+//     return async(dispatch,getState) =>{
+//         try{
+//             const usuarios = await axios.get('http://localhost:4000/api/usuarios')
+//             dispatch({type:'usuarios', payload: usuarios.data.response})
+//         }catch(error){
+//             console.error(error);
+//         }
+//     }
+// }
 
 
 

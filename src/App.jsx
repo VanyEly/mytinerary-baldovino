@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { useEffect } from "react";
+import { signInWithToken } from "./store/actions.js/userActions";
 
 const router = createBrowserRouter([
   {path:'/', element: <Layout />, children: [
