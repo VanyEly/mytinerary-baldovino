@@ -4,7 +4,8 @@ import { createReducer } from "@reduxjs/toolkit";
 import { cargarUsuario, signUp, signIn, signInWithToken, logout } from '../actions/userActions.js'
 const initialState = {
     user: null,
-    token : null
+    token : null,
+    
 }
 export const userReducer = createReducer( initialState, ( builder ) => 
     builder

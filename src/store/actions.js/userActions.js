@@ -8,7 +8,7 @@ export const cargarUsuario = createAction( 'cargar_usuario', (user) => {
 
 export const signUp = createAsyncThunk( "create_user", async ( body ) => {
     try {
-        const response = await axios.post( 'https://localhost:3000/api/user/logout', body )
+        const response = await axios.post( 'http://localhost:3000/api/user/register', body )
         response.data.token && localStorage.setItem( 'token', response.data.token )
         return response.data
     } catch (error) {
@@ -51,6 +51,19 @@ export const logout = createAction( "reset", () => {
             payload : null
         }
 } )
+
+
+export const obtenerTodosLosUsuarios = ()=>{
+    return async(dispatch,getState) =>{
+        try{
+            const usuarios = await axios.get('http://localhost:4000/api/usuarios')
+            dispatch({type:'usuarios', payload: usuarios.data.response})
+        }catch(error){
+            console.error(error);
+        }
+    }
+}
+
 
 
 
