@@ -7,7 +7,7 @@ const CityCard = ({city}) => {
     <article className="bg-secondary rounded col-3 h-auto">
       <img src={`${city.photo}`} className="w-100 h-75" />
       <h2 className="text-center text-white py-3">{`${city.name}`}</h2>
-      <Anchor className="details btn btn-secondary" to={`/city/${city._id}`}>Details </Anchor> 
+      <Anchor className="details btn btn-secondary m-1rounded col-3 h-auto" to={`/city/${city._id}`}>Details </Anchor> 
     </article>
   );
 }
